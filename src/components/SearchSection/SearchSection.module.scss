@@ -1,0 +1,12 @@
+.main-page__search-section {
+	display: grid;
+	place-content: center;
+	margin-inline: calc(var(--padding) * -1);
+	padding: 3em;
+	background-color: var(--clr-primary-300);
+	color: var(--clr-primary-100);
+}
+
+.main-page__title {
+	font-size: 4.5rem;
+}

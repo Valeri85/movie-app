@@ -1,0 +1,56 @@
+@use '../../assets/styles/helpers/mixins' as *;
+
+.header__burger {
+	--burger-size: 1.6em;
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position: absolute;
+	inset: var(--padding) var(--padding) auto auto;
+	width: var(--burger-size);
+	height: var(--burger-size);
+
+	@include mobile {
+		& {
+			display: none;
+		}
+	}
+}
+
+.burger__line {
+	fill: none;
+	stroke: var(--clr-primary-400);
+	stroke-width: 6;
+	transition: stroke-dasharray var(--animation-duration-500) cubic-bezier(0.4, 0, 0.2, 1),
+		stroke-dashoffset var(--animation-duration-500) cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.burger__line--1 {
+	stroke-dasharray: 60 207;
+	stroke-width: 6;
+}
+.burger__line--2 {
+	stroke-dasharray: 60 60;
+	stroke-width: 6;
+}
+.burger__line--3 {
+	stroke-dasharray: 60 207;
+	stroke-width: 6;
+}
+
+.header__burger[aria-expanded='true'] .burger__line--1 {
+	stroke-dasharray: 90 207;
+	stroke-dashoffset: -134;
+	stroke-width: 6;
+}
+.header__burger[aria-expanded='true'] .burger__line--2 {
+	stroke-dasharray: 1 60;
+	stroke-dashoffset: -30;
+	stroke-width: 6;
+}
+.header__burger[aria-expanded='true'] .burger__line--3 {
+	stroke-dasharray: 90 207;
+	stroke-dashoffset: -134;
+	stroke-width: 6;
+}

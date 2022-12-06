@@ -1,0 +1,11 @@
+.movies__list[data-active-list='false'] {
+	display: none;
+}
+
+.movies__list[data-active-list='true'] {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	gap: 1em;
+	margin-top: 2em;
+}

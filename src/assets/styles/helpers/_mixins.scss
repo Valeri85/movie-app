@@ -1,0 +1,32 @@
+@use 'breakpoints' as *;
+
+// Mobile devices.
+@mixin mobile {
+	@media screen and (min-width: $mobile) {
+		@content;
+	}
+}
+// iPads, Tablets.
+@mixin ipad {
+	@media screen and (min-width: $ipad) {
+		@content;
+	}
+}
+// Small screens, laptops.
+@mixin small-screen {
+	@media screen and (min-width: $small-screen) {
+		@content;
+	}
+}
+// Desktops, large screens.
+@mixin large-screen {
+	@media screen and (min-width: $large-screen) {
+		@content;
+	}
+}
+// Extra large screens, TV.
+@mixin extra-large-screen {
+	@media screen and (min-width: $extra-large-screen) {
+		@content;
+	}
+}

@@ -1,0 +1,16 @@
+.main-page__form {
+	margin-top: 1em;
+}
+
+.form__fieldset {
+	display: flex;
+	border: 0;
+}
+
+.form__search {
+	margin-top: 1em;
+	flex-basis: 100%;
+	padding: 0.5em 1.5em;
+	border: 0;
+	border-radius: 50px;
+}

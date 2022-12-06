@@ -1,0 +1,22 @@
+@use '../../assets/styles/helpers/mixins' as *;
+
+.menu__link {
+	text-transform: uppercase;
+	opacity: 0;
+	transition: opacity var(--animation-duration-500) ease-in-out, color var(--animation-duration-500) ease-in-out;
+
+	@include mobile {
+		& {
+			opacity: 1;
+		}
+	}
+}
+
+.menu__link:hover {
+	color: var(--clr-hover-400);
+}
+
+[data-state='opened'] .menu__link {
+	opacity: 1;
+	transition: opacity var(--animation-duration-500) ease var(--animation-delay-500);
+}

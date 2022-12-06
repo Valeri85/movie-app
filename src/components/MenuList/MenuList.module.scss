@@ -1,0 +1,35 @@
+@use '../../assets/styles/helpers/mixins' as *;
+
+.header__menu {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	gap: 1.25em;
+	position: absolute;
+	inset: calc(100% - 1px) -1px auto -1px;
+	padding-block: 1em;
+	background-color: var(--clr-primary-400);
+	transform-origin: top;
+
+	@include mobile {
+		&[data-state='closed'] {
+			display: flex;
+			position: static;
+			flex-direction: row;
+			padding-block: 0;
+		}
+	}
+}
+
+.header__menu[data-state='opened'] {
+	animation: closeNavMenu var(--animation-duration-500) ease-in-out forwards;
+	box-shadow: var(--shadow);
+}
+.header__menu[data-state='closing'] {
+	animation: openNavMenu var(--animation-duration-500) ease-in-out forwards;
+	box-shadow: var(--shadow);
+}
+.header__menu[data-state='closed'] {
+	display: none;
+}

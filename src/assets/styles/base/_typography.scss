@@ -1,0 +1,97 @@
+/* josefin-sans-400 - latin */
+@font-face {
+	font-family: 'Josefin Sans';
+	font-style: normal;
+	font-weight: 400;
+	font-display: swap;
+	src: url('../fonts/josefin-sans-v25-latin-regular.eot'); /* IE9 Compat Modes */
+	src: local(''),
+		/* IE6-IE8 */ url('../fonts/josefin-sans-v25-latin-regular.eot?#iefix')
+			format('embedded-opentype'),
+		/* Super Modern Browsers */
+			url('../fonts/josefin-sans-v25-latin-regular.woff2') format('woff2'),
+		/* Modern Browsers */
+			url('../fonts/josefin-sans-v25-latin-regular.woff') format('woff'),
+		/* Safari, Android, iOS */
+			url('../fonts/josefin-sans-v25-latin-regular.ttf')
+			format('truetype'),
+		/* Legacy iOS */
+			url('../fonts/josefin-sans-v25-latin-regular.svg#JosefinSans')
+			format('svg');
+}
+
+/* josefin-sans-500 - latin */
+@font-face {
+	font-family: 'Josefin Sans';
+	font-style: normal;
+	font-weight: 500;
+	font-display: swap;
+	src: url('../fonts/josefin-sans-v25-latin-500.eot'); /* IE9 Compat Modes */
+	src: local(''),
+		/* IE6-IE8 */ url('../fonts/josefin-sans-v25-latin-500.eot?#iefix')
+			format('embedded-opentype'),
+		/* Super Modern Browsers */
+			url('../fonts/josefin-sans-v25-latin-500.woff2') format('woff2'),
+		/* Modern Browsers */ url('../fonts/josefin-sans-v25-latin-500.woff')
+			format('woff'),
+		/* Safari, Android, iOS */
+			url('../fonts/josefin-sans-v25-latin-500.ttf') format('truetype'),
+		/* Legacy iOS */
+			url('../fonts/josefin-sans-v25-latin-500.svg#JosefinSans')
+			format('svg');
+}
+
+/* josefin-sans-600 - latin */
+@font-face {
+	font-family: 'Josefin Sans';
+	font-style: normal;
+	font-weight: 600;
+	font-display: swap;
+	src: url('../fonts/josefin-sans-v25-latin-600.eot'); /* IE9 Compat Modes */
+	src: local(''),
+		/* IE6-IE8 */ url('../fonts/josefin-sans-v25-latin-600.eot?#iefix')
+			format('embedded-opentype'),
+		/* Super Modern Browsers */
+			url('../fonts/josefin-sans-v25-latin-600.woff2') format('woff2'),
+		/* Modern Browsers */ url('../fonts/josefin-sans-v25-latin-600.woff')
+			format('woff'),
+		/* Safari, Android, iOS */
+			url('../fonts/josefin-sans-v25-latin-600.ttf') format('truetype'),
+		/* Legacy iOS */
+			url('../fonts/josefin-sans-v25-latin-600.svg#JosefinSans')
+			format('svg');
+}
+
+/* neue-montreal-700 */
+@font-face {
+	font-family: 'Neue Montreal';
+	font-style: normal;
+	font-weight: 700;
+	font-display: swap;
+	src: url('../fonts/neue-montreal-700.eot'); /* IE9 Compat Modes */
+	src: local(''),
+		/* Modern Browsers */ url('../fonts/neue-montreal-700.woff')
+			format('woff'),
+		/* Super Modern Browsers */ url('../fonts/neue-montreal-700.woff2')
+			format('woff2'),
+		/* Safari, Android, iOS */ url('../fonts/neue-montreal-700.ttf')
+			format('truetype'),
+		/* Legacy iOS */ url('../fonts/neue-montreal-700.svg') format('svg');
+}
+
+/* neue-montreal-500 */
+@font-face {
+	font-family: 'Neue Montreal';
+	font-style: normal;
+	font-weight: 500;
+	font-display: swap;
+	src: url('fonts/neue-montreal-500.eot'); /* IE9 Compat Modes */
+	src: local(''),
+		/* Modern Browsers */ url('../fonts/neue-montreal-500.woff')
+			format('woff'),
+		/* Super Modern Browsers */ url('../fonts/neue-montreal-700.woff2')
+			format('woff2'),
+		/* Safari, Android, iOS */ url('../fonts/neue-montreal-500.ttf')
+			format('truetype'),
+		/* Legacy iOS */ url('../fonts/neue-montreal-500.svg') format('svg');
+}

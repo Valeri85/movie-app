@@ -1,0 +1,8 @@
+@use 'functions' as *;
+
+// Desktop
+$mobile: em(480); // 30em
+$ipad: em(768); // 48em
+$small-screen: em(1024); // 64em
+$large-screen: em(1200); // 75em
+$extra-large-screen: em(1201); // 75.063em

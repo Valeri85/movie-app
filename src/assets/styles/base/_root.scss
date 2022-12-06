@@ -1,0 +1,39 @@
+:root {
+	/* Font Families */
+	--font-family-primary: 'Josefin Sans', sans-serif;
+	--font-family-secondary: 'Neue Montreal', sans-serif;
+
+	/* Font Sizes */
+	--fs-body: clamp(1.6rem, 1.5091rem + 0.2424vw, 1.8rem);
+
+	/* Font Weights */
+	--fw-normal: 400;
+	--fw-bold: 700;
+
+	/* Background Colors */
+	--clr-primary-100: hsl(0, 0%, 90%);
+	--clr-primary-300: hsl(201, 96%, 20%);
+	--clr-primary-400: hsl(278, 68%, 11%);
+
+	--clr-secondary-200: hsl(60, 100%, 45%);
+
+	/* Hovers */
+	--clr-hover-400: hsl(60, 100%, 75%);
+
+	/* Shadows */
+	--shadow: 0 7.5px 7.5px 0 hsl(0 0% 0% / 0.5);
+
+	/* Responsive Paddings */
+	--padding: clamp(1em, 0.7143rem + 0.8929vw, 2em);
+
+	/* Border Radiuses */
+	/* --border-radius-400: 0.6em; */
+
+	/* Animations */
+	/* Duration */
+	--animation-duration-100: 150ms;
+	--animation-duration-400: 500ms;
+	--animation-duration-500: 700ms;
+	/* Delay */
+	--animation-delay-400: 350ms;
+}

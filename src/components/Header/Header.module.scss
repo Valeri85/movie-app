@@ -1,0 +1,9 @@
+.header {
+	position: fixed;
+	width: 100%;
+	padding: var(--padding);
+	background-color: var(--clr-primary-400);
+	font-weight: var(--fw-bold);
+	box-shadow: var(--shadow);
+	z-index: 2;
+}

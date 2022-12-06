@@ -1,0 +1,86 @@
+/* Set core defaults */
+*,
+*::before,
+*::after {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font: inherit;
+	/* Avoid text overflows */
+	overflow-wrap: break-word;
+}
+
+/* Set core html and body defaults */
+html,
+body {
+	height: 100%;
+}
+
+/* Set core root defaults */
+html {
+	font-weight: var(--fw-normal);
+	font-size: 62.5%;
+	/*
+    1rem = 16px
+    1rem * 62.5% = 10px
+    If all font sizes = 62.5% than rem * 0.625
+    1rem = 10px; 0.1rem = 1px; 2.4rem = 24px...      
+    */
+	scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+	display: grid;
+	width: 100%;
+	font-size: var(--fs-body);
+	line-height: 1.6;
+	text-rendering: optimizeSpeed;
+	/* Improve text rendering */
+	-webkit-font-smoothing: antialiased;
+}
+
+/* Make images easier to work with */
+img,
+picture,
+video,
+canvas,
+svg {
+	display: block;
+	max-width: 100%;
+	height: auto;
+}
+
+/* Remove default styles from links and abbreviation */
+a,
+abbr {
+	text-decoration: none;
+	color: var(--clr-primary-100);
+}
+
+/* Remove list styles on ul, ol elements */
+li::marker {
+	content: '';
+}
+@supports not selector(::marker) {
+	ul,
+	ol {
+		list-style-type: none;
+	}
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+	html:focus-within {
+		scroll-behavior: auto;
+	}
+
+	*,
+	*::before,
+	*::after {
+		animation-duration: 0.01ms !important;
+		animation-iteration-count: 1 !important;
+		transition-duration: 0.01ms !important;
+		scroll-behavior: auto !important;
+	}
+}

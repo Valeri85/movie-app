@@ -1,0 +1,14 @@
+.categories__tab {
+	display: inline-block;
+	padding: 0.75em 5em;
+	background-color: var(--clr-primary-300);
+	border: 0;
+	border-radius: 10em;
+	color: var(--clr-primary-100);
+	transition: transform var(--animation-duration-400);
+	cursor: pointer;
+}
+
+.categories__tab[data-active-tab='true'] {
+	transform: translateY(-20%);
+}
