@@ -26,10 +26,30 @@
 	animation: closeNavMenu var(--animation-duration-500) ease-in-out forwards;
 	box-shadow: var(--shadow);
 }
+
 .header__menu[data-state='closing'] {
 	animation: openNavMenu var(--animation-duration-500) ease-in-out forwards;
 	box-shadow: var(--shadow);
 }
+
 .header__menu[data-state='closed'] {
 	display: none;
+}
+
+@keyframes openNavMenu {
+	0% {
+		transform: scale(1, 1);
+	}
+	100% {
+		transform: scale(1, 0);
+	}
+}
+
+@keyframes closeNavMenu {
+	0% {
+		transform: scale(1, 0);
+	}
+	100% {
+		transform: scale(1, 1);
+	}
 }

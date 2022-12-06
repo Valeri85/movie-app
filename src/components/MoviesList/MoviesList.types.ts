@@ -1,4 +1,4 @@
-import { topRatedMovie } from '../../service/types/topRatedMovie.types';
+import { topRatedMovie } from '../../service/types/Movie.types';
 
 export interface MoviesListProps {
 	movies: topRatedMovie[];

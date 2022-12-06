@@ -1,14 +1,11 @@
 import React from 'react';
 import { IMAGE_PATH } from '../../constants/api';
-import { topRatedMovie } from '../../service/types/topRatedMovie.types';
+import { Movie } from '../../service/types/Movie.types';
 import styles from './MoviesListItems.module.scss';
 
-export const MoviesListItem: React.FC<topRatedMovie> = ({
-	original_title,
-	poster_path,
-	vote_average,
-	release_date,
-}) => {
+export const MoviesListItem: React.FC<Movie> = props => {
+	const { original_title, poster_path, vote_average, release_date } = props;
+
 	const dateTimeAttr = new Date(release_date).toISOString();
 	const date = new Date(release_date).toDateString().slice(4);
 

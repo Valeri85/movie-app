@@ -1,5 +1,5 @@
 import React from 'react';
-import { BurgerProps } from '../MenuList/MenuList.types';
+import { BurgerProps } from './Burger.types';
 import styles from './Burger.module.scss';
 
 export const Burger: React.FC<BurgerProps> = ({ expanded, setExpanded }) => (
