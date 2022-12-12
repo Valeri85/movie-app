@@ -11,13 +11,11 @@ export const Home: React.FC = () => {
 	const topRatedMovies = useLoaderData() as MoviesListProps['movies'];
 
 	return (
-		<>
-			<main className={styles['main-page']} id="main-page">
-				<SearchSection />
-				<CategoriesSection />
-				<MoviesList movies={topRatedMovies} />
-			</main>
-		</>
+		<main className={styles['main-page']} id="main-page">
+			<SearchSection />
+			<CategoriesSection />
+			<MoviesList movies={topRatedMovies} />
+		</main>
 	);
 };
 
