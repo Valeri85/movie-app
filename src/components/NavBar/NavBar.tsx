@@ -6,6 +6,7 @@ import styles from './NavBar.module.scss';
 
 export const NavBar: React.FC = () => {
 	const [expanded, setExpanded] = useState<boolean>(false);
+	// Todo change this state with ref. ex: https://bobbyhadz.com/blog/react-set-data-attribute#:~:text=To%20set%20a%20data%20attribute,object%20or%20using%20a%20ref%20.&text=Copied!
 	const [menuState, setMenuState] = useState<'opened' | 'closing' | 'closed'>('closed');
 
 	return (

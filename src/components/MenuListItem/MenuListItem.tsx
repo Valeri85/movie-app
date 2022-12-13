@@ -1,9 +1,10 @@
 import React from 'react';
 import { MenuListItemProps } from '../MenuListItem/MenuListItem.types';
+import styles from './MenuListItem.module.scss';
 
 export const MenuListItem: React.FC<MenuListItemProps> = ({ name }) => (
-	<li className="menu__item">
-		<a className="menu__link" href="#">
+	<li>
+		<a className={styles.menu__link} href="#">
 			{name}
 		</a>
 	</li>

@@ -11,7 +11,7 @@ export const MoviesListItem: React.FC<Movie> = ({ original_title, poster_path, v
 		<li className={styles['movies__list-item']}>
 			<article className={styles['movie__card']}>
 				<small className={styles['movie__budge']}>{`${vote_average}`}</small>
-				<img className={styles['movie__poster']} src={`${IMAGE_PATH}${poster_path}`} width="200px" height="200px" alt="" />
+				<img className={styles['movie__poster']} src={`${IMAGE_PATH}${poster_path}`} width="200" height="200" alt="" />
 				<a className={styles['movie__link']} href="#" aria-label="Go to Movie Details"></a>
 				<div className={styles['movie__content']}>
 					<h2 className={styles['movie__title']}>{`${original_title}`}</h2>
