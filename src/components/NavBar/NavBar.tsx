@@ -11,8 +11,8 @@ export const NavBar: React.FC = () => {
 	return (
 		<nav className={styles['header__navbar']} aria-label="primary-navigation">
 			<Logo />
-			<Burger {...{ expanded, setExpanded, setMenuState }} />
-			<MenuList {...{ expanded, setExpanded, menuState, setMenuState }} />
+			<Burger {...{ expanded, setExpanded, menuState, setMenuState }} />
+			<MenuList {...{ expanded, menuState, setMenuState }} />
 		</nav>
 	);
 };

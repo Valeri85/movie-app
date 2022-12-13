@@ -2,10 +2,11 @@ import React from 'react';
 import { BurgerProps } from './Burger.types';
 import styles from './Burger.module.scss';
 
-export const Burger: React.FC<BurgerProps> = ({ expanded, setExpanded, setMenuState }) => {
+export const Burger: React.FC<BurgerProps> = ({ expanded, setExpanded, menuState, setMenuState }) => {
 	const clickHandler = () => {
 		setExpanded(!expanded);
-		setMenuState('opened');
+		if (menuState === 'closed') setMenuState('opened');
+		if (menuState === 'opened') setMenuState('closing');
 	};
 
 	return (
