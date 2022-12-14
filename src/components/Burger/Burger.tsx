@@ -12,7 +12,6 @@ export const Burger: React.FC<BurgerProps> = ({ expanded, setExpanded, menuState
 	return (
 		<button
 			className={styles.header__burger}
-			id="header-burger"
 			aria-label="Primary Menu"
 			aria-expanded={expanded}
 			aria-controls="primary-navigation-menu"

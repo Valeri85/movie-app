@@ -7,7 +7,7 @@ export const MenuList: React.FC<MenuListProps> = ({ expanded, menuState, setMenu
 	const animationEndHandler = () => !expanded && setMenuState('closed');
 
 	return (
-		<ul className={styles.header__menu} id="primary-navigation-menu" onAnimationEnd={animationEndHandler} data-state={menuState}>
+		<ul className={styles.header__menu} onAnimationEnd={animationEndHandler} data-state={menuState}>
 			{['Movies', 'Tv Shows', 'People'].map((item, index) => (
 				<MenuListItem name={item} key={index} />
 			))}

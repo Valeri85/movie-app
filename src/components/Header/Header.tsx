@@ -15,7 +15,7 @@ export const Header = forwardRef<HeaderHeight, HeaderProps>((_, ref) => {
 	);
 
 	return (
-		<header className={styles.header} id="header" ref={headerRef}>
+		<header className={styles.header} ref={headerRef}>
 			<NavBar />
 		</header>
 	);
