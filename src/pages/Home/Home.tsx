@@ -1,6 +1,6 @@
 import React from 'react';
 import { useLoaderData, useOutletContext } from 'react-router-dom';
-import { CategoriesSection } from '../../components/CategoriesSection/CategoriesSection';
+import { TabsSection } from '../../components/TabsSection/TabsSection';
 import { MoviesList } from '../../components/MoviesList/MoviesList';
 import { MoviesListProps } from '../../components/MoviesList/MoviesList.types';
 import { SearchSection } from '../../components/SearchSection/SearchSection';
@@ -15,7 +15,7 @@ export const Home: React.FC = () => {
 	return (
 		<main className={styles.page} style={{ paddingTop }}>
 			<SearchSection />
-			<CategoriesSection />
+			<TabsSection />
 			<MoviesList movies={topRatedMovies} />
 		</main>
 	);

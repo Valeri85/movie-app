@@ -1,4 +1,4 @@
-.categories__tab {
+.tab {
 	display: inline-block;
 	padding: 0.75em 5em;
 	background-color: var(--clr-primary-300);
@@ -9,6 +9,6 @@
 	cursor: pointer;
 }
 
-.categories__tab[data-active-tab='true'] {
+.tab:where(.active) {
 	transform: translateY(-20%);
 }

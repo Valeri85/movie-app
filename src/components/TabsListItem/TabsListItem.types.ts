@@ -1,3 +1,6 @@
 export type TabsListItemProps = {
-	category: string;
+	tab: string;
+	selected: number;
+	setSelected: React.Dispatch<React.SetStateAction<number>>;
+	tabIndex: number;
 };

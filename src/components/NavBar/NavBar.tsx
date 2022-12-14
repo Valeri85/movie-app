@@ -10,7 +10,7 @@ export const NavBar: React.FC = () => {
 	const [menuState, setMenuState] = useState<'opened' | 'closing' | 'closed'>('closed');
 
 	return (
-		<nav className={styles['header__navbar']} aria-label="primary-navigation">
+		<nav className={styles['header__navbar']} aria-label="primary">
 			<Logo />
 			<Burger {...{ expanded, setExpanded, menuState, setMenuState }} />
 			<MenuList {...{ expanded, menuState, setMenuState }} />
