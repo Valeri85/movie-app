@@ -1,6 +1,6 @@
 @use '../../assets/styles/helpers/mixins' as *;
 
-.menu__link {
+.link {
 	text-transform: uppercase;
 	opacity: 0;
 	transition: opacity var(--animation-duration-500) ease-in-out, color var(--animation-duration-500) ease-in-out;
@@ -10,13 +10,13 @@
 			opacity: 1;
 		}
 	}
+
+	&:hover {
+		color: var(--clr-hover-400);
+	}
 }
 
-.menu__link:hover {
-	color: var(--clr-hover-400);
-}
-
-[data-state='opened'] .menu__link {
+[data-state='opened'] .link {
 	opacity: 1;
 	transition: opacity var(--animation-duration-500) ease var(--animation-delay-500);
 }

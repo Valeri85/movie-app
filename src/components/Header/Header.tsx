@@ -1,22 +1,24 @@
-import { forwardRef, useImperativeHandle, useRef } from 'react';
+import { forwardRef, ForwardRefExoticComponent, RefAttributes, useImperativeHandle, useRef } from 'react';
 import { NavBar } from '../NavBar/NavBar';
 import styles from './Header.module.scss';
 import { HeaderHeight, HeaderProps } from './Header.types';
 
-export const Header = forwardRef<HeaderHeight, HeaderProps>((_, ref) => {
-	const headerRef = useRef<HTMLElement>(null);
+export const Header: ForwardRefExoticComponent<HeaderProps & RefAttributes<HeaderHeight>> = forwardRef<HeaderHeight, HeaderProps>(
+	(_, ref) => {
+		const headerRef = useRef<HTMLElement>(null);
 
-	useImperativeHandle(
-		ref,
-		() => ({
-			headerHeight: headerRef.current?.clientHeight,
-		}),
-		[]
-	);
+		useImperativeHandle(
+			ref,
+			() => ({
+				headerHeight: headerRef.current?.clientHeight,
+			}),
+			[]
+		);
 
-	return (
-		<header className={styles.header} ref={headerRef}>
-			<NavBar />
-		</header>
-	);
-});
+		return (
+			<header className={styles.header} ref={headerRef}>
+				<NavBar />
+			</header>
+		);
+	}
+);

@@ -1,6 +1,6 @@
-import { LATEST_MOVIES, TOP_RATED_MOVIES, UPCOMING_MOVIES } from '../constants/api';
+import { API_KEY, BASE_URL } from '../constants/api';
 
-export const getMovies = async (url: string) => {
+export const fetchMovies = async (url: string) => {
 	try {
 		const response = await fetch(url);
 
@@ -14,6 +14,5 @@ export const getMovies = async (url: string) => {
 	}
 };
 
-export const getTopRatedMovies = async () => await getMovies(TOP_RATED_MOVIES);
-export const getUpcomingMovies = async () => await getMovies(UPCOMING_MOVIES);
-export const getNowPlayingMovies = async () => await getMovies(LATEST_MOVIES);
+export const getMovies = async (moviesCategory: string) =>
+	await fetchMovies(`${BASE_URL}/movie/${moviesCategory}?api_key=${API_KEY}&language=en-US&page=1`);

@@ -1,10 +1,10 @@
-import React from 'react';
+import { FC } from 'react';
 import { MenuListItemProps } from '../MenuListItem/MenuListItem.types';
 import styles from './MenuListItem.module.scss';
 
-export const MenuListItem: React.FC<MenuListItemProps> = ({ name }) => (
+export const MenuListItem: FC<MenuListItemProps> = ({ name }) => (
 	<li>
-		<a className={styles.menu__link} href="#">
+		<a className={styles.link} href="#">
 			{name}
 		</a>
 	</li>

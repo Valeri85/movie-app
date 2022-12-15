@@ -1,15 +1,12 @@
-import React, { useState } from 'react';
+import { FC } from 'react';
+import { NOW_PLAYING, TOP_RATED, UPCOMING } from '../../constants/api';
 import { TabsListItem } from '../TabsListItem/TabsListItem';
 import styles from './TabsList.module.scss';
 
-export const TabsList: React.FC = () => {
-	const [selected, setSelected] = useState<number>(0);
-
-	return (
-		<ul className={styles['categories__tabs']}>
-			{['Top Rated', 'Upcoming', 'Now Playing'].map((tab, tabIndex) => (
-				<TabsListItem key={tabIndex} {...{ tab, selected, setSelected, tabIndex }} />
-			))}
-		</ul>
-	);
-};
+export const TabsList: FC = () => (
+	<ul className={styles.tabs}>
+		{[TOP_RATED, UPCOMING, NOW_PLAYING].map((tab, index) => (
+			<TabsListItem key={index} {...{ tab, index }} />
+		))}
+	</ul>
+);

@@ -1,4 +1,4 @@
-.main-page__search-section {
+.search-section {
 	display: grid;
 	place-content: center;
 	margin-inline: calc(var(--padding) * -1);
@@ -7,6 +7,6 @@
 	color: var(--clr-primary-100);
 }
 
-.main-page__title {
+.title {
 	font-size: 4.5rem;
 }

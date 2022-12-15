@@ -1,7 +1,7 @@
 @use '../../assets/styles/helpers/mixins' as *;
 
 @include mobile {
-	.header__navbar {
+	.navbar {
 		display: flex;
 		justify-content: space-between;
 	}

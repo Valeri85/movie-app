@@ -1,9 +1,9 @@
-import React from 'react';
+import { FC } from 'react';
 import { TabsList } from '../TabsList/TabsList';
 import styles from './TabsSection.module.scss';
 
-export const TabsSection: React.FC = () => (
-	<section className={styles['main-page__categories']}>
+export const TabsSection: FC = () => (
+	<section className={styles['tabs-section']}>
 		<TabsList />
 	</section>
 );

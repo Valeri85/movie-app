@@ -5,8 +5,9 @@
 	border: 0;
 	border-radius: 10em;
 	color: var(--clr-primary-100);
-	transition: transform var(--animation-duration-400);
+	text-transform: capitalize;
 	cursor: pointer;
+	transition: transform var(--animation-duration-400);
 }
 
 .tab:where(.active) {

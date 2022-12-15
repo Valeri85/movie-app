@@ -1,7 +1,7 @@
 @use '../../assets/styles/helpers/mixins' as *;
 @use '../../assets/styles/base/animations' as *;
 
-.header__menu {
+.menu {
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -12,25 +12,25 @@
 	padding-block: 1em;
 	background-color: var(--clr-primary-400);
 	transform-origin: top;
-}
 
-.header__menu[data-state='opened'] {
-	animation: openNavMenu var(--animation-duration-500) ease-in-out forwards;
-	box-shadow: var(--shadow);
-}
+	&[data-state='opened'] {
+		animation: openNavMenu var(--animation-duration-500) ease-in-out forwards;
+		box-shadow: var(--shadow);
+	}
 
-.header__menu[data-state='closing'] {
-	animation: closeNavMenu var(--animation-duration-500) ease-in-out forwards;
-	box-shadow: var(--shadow);
-}
+	&[data-state='closing'] {
+		animation: closeNavMenu var(--animation-duration-500) ease-in-out forwards;
+		box-shadow: var(--shadow);
+	}
 
-.header__menu[data-state='closed'] {
-	display: none;
+	&[data-state='closed'] {
+		display: none;
 
-	@include mobile {
-		display: flex;
-		position: static;
-		flex-direction: row;
-		padding-block: 0;
+		@include mobile {
+			display: flex;
+			position: static;
+			flex-direction: row;
+			padding-block: 0;
+		}
 	}
 }

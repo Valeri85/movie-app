@@ -1,4 +1,4 @@
-.movie__card {
+.card {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
@@ -9,7 +9,7 @@
 	overflow: hidden;
 }
 
-.movie__budge {
+.card-budge {
 	position: absolute;
 	inset: 0.5em auto auto 0.5em;
 	padding: 0.25em 0.5em;
@@ -18,21 +18,21 @@
 	z-index: 1;
 }
 
-.movie__content {
+.card-content {
 	padding: 0.5em 1em;
 }
 
-.movie__title {
+.card-title {
 	font-weight: bold;
 }
 
-.movie__poster {
+.card-poster {
 	object-fit: cover;
 	width: 100%;
 	height: 100%;
 }
 
-.movie__link {
+.card-link {
 	position: absolute;
 	inset: 0;
 }

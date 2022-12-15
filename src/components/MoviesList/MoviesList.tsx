@@ -1,12 +1,17 @@
-import React from 'react';
+import { FC } from 'react';
+import { useLoaderData } from 'react-router-dom';
+import { Movie } from '../../service/types/Movie.types';
 import { MoviesListItem } from '../MoviesListItem/MoviesListItem';
-import { MoviesListProps } from './MoviesList.types';
 import styles from './MoviesList.module.scss';
 
-export const MoviesList: React.FC<MoviesListProps> = ({ movies }) => (
-	<ul className={styles['movies__list']} data-active-list="true">
-		{movies.map((topRatedMovies, index) => (
-			<MoviesListItem key={index} {...topRatedMovies} />
-		))}
-	</ul>
-);
+export const MoviesList: FC = () => {
+	const movies = useLoaderData() as Movie[];
+
+	return (
+		<ul className={`${styles.list} ${styles.active}`}>
+			{movies?.map((movie, index) => (
+				<MoviesListItem key={index} {...movie} />
+			))}
+		</ul>
+	);
+};

@@ -1,7 +1,3 @@
-import React from 'react';
+import { FC } from 'react';
 
-export const Logo: React.FC = () => (
-	<a className="header__logo" href="#">
-		MovieDB
-	</a>
-);
+export const Logo: FC = () => <a href="#">MovieDB</a>;

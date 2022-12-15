@@ -1,3 +1,3 @@
-import React from 'react';
+import { FC } from 'react';
 
-export const Movies: React.FC = () => <h1>Movies Page</h1>;
+export const Movies: FC = () => <h1>Movies Page</h1>;

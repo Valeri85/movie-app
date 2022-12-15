@@ -1,11 +1,23 @@
-import React from 'react';
+import { FC } from 'react';
+import { useOutletContext } from 'react-router-dom';
+import { RouterContext } from '../../pages/Home/Home.types';
 import { TabsListItemProps } from '../TabsListItem/TabsListItem.types';
 import styles from './TabsListItem.module.scss';
 
-export const TabsListItem: React.FC<TabsListItemProps> = ({ tab, selected, setSelected, tabIndex }) => (
-	<li>
-		<button className={`${styles.tab} ${tabIndex === selected ? styles.active : ''}`} onClick={() => setSelected(tabIndex)}>
-			{tab}
-		</button>
-	</li>
-);
+export const TabsListItem: FC<TabsListItemProps> = ({ tab, index }) => {
+	const { selectedTab, setSelectedTab } = useOutletContext<RouterContext>();
+
+	const fixedCategories = tab.split('_').join(' ');
+	const tabIndex = index + 1;
+
+	return (
+		<li>
+			<button
+				className={`${styles.tab} ${tabIndex === selectedTab.id ? styles.active : ''}`}
+				onClick={() => setSelectedTab({ id: tabIndex, category: tab })}
+			>
+				{fixedCategories}
+			</button>
+		</li>
+	);
+};
