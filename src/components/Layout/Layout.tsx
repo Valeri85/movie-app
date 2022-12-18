@@ -1,15 +1,15 @@
 import { FC, useEffect, useRef, useState } from 'react';
 import { Outlet } from 'react-router-dom';
 import { TOP_RATED } from '../../constants/api';
-import { getMovies } from '../../service/apiService';
 import { Footer } from '../Footer/Footer';
 import { Header } from '../Header/Header';
 import { HeaderHeight } from '../Header/Header.types';
+import styles from './Layout.module.scss';
 import { SelectedTab } from './Layout.types';
 
-export const Layout: FC = ({ selectedTab, setSelectedTab }) => {
+export const Layout: FC = () => {
+	const [selectedTab, setSelectedTab] = useState<SelectedTab>({ id: 1, category: TOP_RATED });
 	const [paddingTop, setPaddingTop] = useState<number | undefined>();
-	// const [selectedTab, setSelectedTab] = useState<SelectedTab>({ id: 1, category: TOP_RATED });
 	const headerRef = useRef<HeaderHeight>(null);
 
 	useEffect(() => setPaddingTop(headerRef.current?.headerHeight), [headerRef]);
@@ -17,10 +17,10 @@ export const Layout: FC = ({ selectedTab, setSelectedTab }) => {
 	return (
 		<>
 			<Header ref={headerRef} />
-			<Outlet context={{ paddingTop, selectedTab, setSelectedTab }} />
+			<main className={styles.page} style={{ paddingTop }}>
+				<Outlet context={{ paddingTop, selectedTab, setSelectedTab }} />
+			</main>
 			<Footer />
 		</>
 	);
 };
-
-// export const loader = () => getMovies(TOP_RATED);

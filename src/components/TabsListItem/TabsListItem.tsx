@@ -14,7 +14,7 @@ export const TabsListItem: FC<TabsListItemProps> = ({ tab, index }) => {
 		<li>
 			<button
 				className={`${styles.tab} ${tabIndex === selectedTab.id ? styles.active : ''}`}
-				onClick={() => setSelectedTab({ id: tabIndex, category: tab })}
+				onClick={() => setSelectedTab({ id: index + 1, category: tab })}
 			>
 				{fixedCategories}
 			</button>

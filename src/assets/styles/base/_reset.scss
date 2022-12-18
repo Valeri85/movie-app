@@ -12,7 +12,8 @@
 
 /* Set core html and body defaults */
 html,
-body {
+body,
+#root {
 	height: 100%;
 }
 
@@ -31,13 +32,18 @@ html {
 
 /* Set core body defaults */
 body {
-	display: grid;
 	width: 100%;
 	font-size: var(--fs-body);
 	line-height: 1.6;
 	text-rendering: optimizeSpeed;
 	/* Improve text rendering */
 	-webkit-font-smoothing: antialiased;
+}
+
+/* Create a root stacking context */
+#root {
+	display: grid;
+	isolation: isolate;
 }
 
 /* Make images easier to work with */

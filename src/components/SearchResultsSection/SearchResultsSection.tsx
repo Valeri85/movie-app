@@ -1,8 +1,8 @@
 import { FC } from 'react';
-import { MoviesList } from '../MoviesList/MoviesList';
+import { CategoryList } from '../CategoryList/CategoryList';
 
 export const SearchResultsSection: FC = () => (
 	<section>
-		<MoviesList />
+		<CategoryList pageContent="top_rated-movies" />
 	</section>
 );

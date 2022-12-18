@@ -1,11 +1,13 @@
 import { FC } from 'react';
+import { Link } from 'react-router-dom';
+import { MOVIES, PEOPLE, TV_SHOWS } from '../../constants/api';
 import { MenuListItemProps } from '../MenuListItem/MenuListItem.types';
 import styles from './MenuListItem.module.scss';
 
 export const MenuListItem: FC<MenuListItemProps> = ({ name }) => (
 	<li>
-		<a className={styles.link} href="#">
-			{name}
-		</a>
+		<Link className={styles.link} to={name === MOVIES ? '/movies' : name === TV_SHOWS ? '/tv-shows' : PEOPLE}>
+			{name.split('_').join(' ')}
+		</Link>
 	</li>
 );

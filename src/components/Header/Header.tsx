@@ -10,7 +10,7 @@ export const Header: ForwardRefExoticComponent<HeaderProps & RefAttributes<Heade
 		useImperativeHandle(
 			ref,
 			() => ({
-				headerHeight: headerRef.current?.clientHeight,
+				headerHeight: headerRef.current?.clientHeight && headerRef.current?.clientHeight - 1,
 			}),
 			[]
 		);
