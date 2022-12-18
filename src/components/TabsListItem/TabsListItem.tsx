@@ -7,16 +7,15 @@ import styles from './TabsListItem.module.scss';
 export const TabsListItem: FC<TabsListItemProps> = ({ tab, index }) => {
 	const { selectedTab, setSelectedTab } = useOutletContext<RouterContext>();
 
-	const fixedCategories = tab.split('_').join(' ');
 	const tabIndex = index + 1;
 
 	return (
 		<li>
 			<button
 				className={`${styles.tab} ${tabIndex === selectedTab.id ? styles.active : ''}`}
-				onClick={() => setSelectedTab({ id: index + 1, category: tab })}
+				onClick={() => setSelectedTab({ id: tabIndex, category: tab })}
 			>
-				{fixedCategories}
+				{tab.split('_').join(' ')}
 			</button>
 		</li>
 	);

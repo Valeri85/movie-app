@@ -1,4 +1,5 @@
 import { API_KEY, BASE_URL } from '../constants/api';
+import { getDataProps } from './types/getDataProps.types';
 
 export const fetchAPIData = async (url: string) => {
 	try {
@@ -14,11 +15,5 @@ export const fetchAPIData = async (url: string) => {
 	}
 };
 
-export const getMovies = async (category: string) =>
-	await fetchAPIData(`${BASE_URL}/movie/${category}?api_key=${API_KEY}&language=en-US&page=1`);
-
-export const getTVShows = async (category: string) =>
-	await fetchAPIData(`${BASE_URL}/tv/${category}?api_key=${API_KEY}&language=en-US&page=1`);
-
-export const getPeople = async (category: string) =>
-	await fetchAPIData(`${BASE_URL}/person/${category}?api_key=${API_KEY}&language=en-US&page=1`);
+export const getData = async (mediaType: getDataProps['mediaType'], category: getDataProps['category']) =>
+	await fetchAPIData(`${BASE_URL}/${mediaType}/${category}?api_key=${API_KEY}&language=en-US&page=1`);

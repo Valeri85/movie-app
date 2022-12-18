@@ -14,21 +14,21 @@ export const CategoryListItem: FC<CategoryListItemProps> = ({
 	release_date,
 	first_air_date,
 }) => {
-	const isPeoplePage = pageContent === 'popular-people';
-	const isMoviesPage = pageContent === 'popular-movies';
-	const isTopRatedMovies = pageContent === 'top_rated-movies';
-	const isMovie = isMoviesPage || isTopRatedMovies;
-	const isTVShowsPage = pageContent === 'popular-tv_shows';
-	const dateTimeAttr = !isPeoplePage && new Date(release_date ?? first_air_date).toISOString();
-	const date = !isPeoplePage && new Date(release_date ?? first_air_date).toDateString().slice(4);
+	const isMovie = pageContent === 'popular-movies';
+	const isTopRatedMovie = pageContent === 'top_rated-movies';
+	const isMovieCard = isMovie || isTopRatedMovie;
+	const isTVShowsCard = pageContent === 'popular-tv_shows';
+	const isPeopleCard = pageContent === 'popular-people';
+	const dateTimeAttr = !isPeopleCard && new Date(release_date ?? first_air_date).toISOString();
+	const date = !isPeopleCard && new Date(release_date ?? first_air_date).toDateString().slice(4);
 
 	return (
 		<li>
 			<article className={styles['card']}>
-				{!isPeoplePage && <small className={styles['card-budge']}>{`${vote_average}`}</small>}
+				{!isPeopleCard && <small className={styles['card-budge']}>{`${vote_average}`}</small>}
 				<img
 					className={styles['card-poster']}
-					src={`${IMAGE_PATH}${isMovie || isTVShowsPage ? poster_path : profile_path}`}
+					src={`${IMAGE_PATH}${isMovieCard || isTVShowsCard ? poster_path : profile_path}`}
 					width="200"
 					height="350"
 					loading="lazy"
@@ -36,8 +36,8 @@ export const CategoryListItem: FC<CategoryListItemProps> = ({
 				/>
 				<a className={styles['card-link']} href="#" aria-label="Go to Movie Details"></a>
 				<div className={styles['card-content']}>
-					<h2 className={styles['card-title']}>{`${isMovie ? original_title : isTVShowsPage ? original_name : name}`}</h2>
-					{!isPeoplePage && (
+					<h2 className={styles['card-title']}>{`${isMovieCard ? original_title : isTVShowsCard ? original_name : name}`}</h2>
+					{!isPeopleCard && (
 						<time className={styles['card-date']} dateTime={`${dateTimeAttr}`}>
 							{`${date}`}
 						</time>

@@ -8,7 +8,7 @@ import { Home } from './pages/Home/Home';
 import { Movies } from './pages/Movies/Movies';
 import { People } from './pages/People/People';
 import { TVShows } from './pages/TVShows/TVShows';
-import { getMovies, getPeople, getTVShows } from './service/apiService';
+import { getData } from './service/apiService';
 
 const router = createBrowserRouter([
 	{
@@ -18,22 +18,22 @@ const router = createBrowserRouter([
 			{
 				path: '/',
 				element: <Home />,
-				loader: async () => await getMovies(TOP_RATED),
+				loader: () => getData('movie', TOP_RATED),
 			},
 			{
 				path: '/movies',
 				element: <Movies />,
-				loader: async () => await getMovies(POPULAR),
+				loader: () => getData('movie', POPULAR),
 			},
 			{
 				path: '/tv-shows',
 				element: <TVShows />,
-				loader: async () => await getTVShows(POPULAR),
+				loader: () => getData('tv', POPULAR),
 			},
 			{
 				path: '/people',
 				element: <People />,
-				loader: async () => await getPeople(POPULAR),
+				loader: () => getData('person', POPULAR),
 			},
 		],
 	},
