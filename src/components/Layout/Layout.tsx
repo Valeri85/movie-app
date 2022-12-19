@@ -18,7 +18,7 @@ export const Layout: FC = () => {
 		<>
 			<Header ref={headerRef} />
 			<main className={styles.page} style={{ paddingTop }}>
-				<Outlet context={{ paddingTop, selectedTab, setSelectedTab }} />
+				<Outlet context={{ selectedTab, setSelectedTab }} />
 			</main>
 			<Footer />
 		</>

@@ -1,8 +1,9 @@
 import { FC } from 'react';
+import { Outlet } from 'react-router-dom';
 import { CategoryList } from '../CategoryList/CategoryList';
 
 export const SearchResultsSection: FC = () => (
 	<section>
-		<CategoryList pageContent="top_rated-movies" />
+		<Outlet />
 	</section>
 );

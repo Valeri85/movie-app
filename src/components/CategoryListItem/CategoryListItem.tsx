@@ -1,4 +1,5 @@
 import { FC } from 'react';
+import { Link } from 'react-router-dom';
 import { IMAGE_PATH } from '../../constants';
 import styles from './CategoryListItem.module.scss';
 import { CategoryListItemProps } from './CategoryListItem.types';
@@ -14,9 +15,9 @@ export const CategoryListItem: FC<CategoryListItemProps> = ({
 	release_date: movieDate,
 	first_air_date: TVShowDate,
 }) => {
-	const isMovie = pageContent === 'popular-movies';
-	const isTopRatedMovie = pageContent === 'top_rated-movies';
-	const isMovieCard = isMovie || isTopRatedMovie;
+	const isMovie = pageContent === 'movies';
+	const isPopularMovie = pageContent === 'popular-movies';
+	const isMovieCard = isMovie || isPopularMovie;
 	const isTVShowsCard = pageContent === 'popular-tv_shows';
 	const isPeopleCard = pageContent === 'popular-people';
 	const dateTimeAttr = !isPeopleCard && new Date(movieDate ?? TVShowDate).toISOString();
@@ -34,7 +35,7 @@ export const CategoryListItem: FC<CategoryListItemProps> = ({
 					loading="lazy"
 					alt=""
 				/>
-				<a className={styles['card-link']} href="#" aria-label="Go to Movie Details"></a>
+				<Link className={styles['card-link']} to="#" aria-label="Go to Movie Details"></Link>
 				<div className={styles['card-content']}>
 					<h2 className={styles['card-title']}>{`${isMovieCard ? movieTitle : isTVShowsCard ? TVShowName : personName}`}</h2>
 					{!isPeopleCard && (

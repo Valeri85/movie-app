@@ -1,13 +1,16 @@
 import { FC } from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import { MOVIES, PEOPLE, TV_SHOWS } from '../../constants';
 import { MenuListItemProps } from '../MenuListItem/MenuListItem.types';
 import styles from './MenuListItem.module.scss';
 
 export const MenuListItem: FC<MenuListItemProps> = ({ name }) => (
 	<li>
-		<Link className={styles.link} to={name === MOVIES ? '/movies' : name === TV_SHOWS ? '/tv-shows' : PEOPLE}>
+		<NavLink
+			className={({ isActive }) => (isActive ? `${styles.link} ${styles.active}` : `${styles.link}`)}
+			to={name === MOVIES ? `/${MOVIES}` : name === TV_SHOWS ? `/${TV_SHOWS}` : PEOPLE}
+		>
 			{name.split('_').join(' ')}
-		</Link>
+		</NavLink>
 	</li>
 );
