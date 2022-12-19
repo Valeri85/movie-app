@@ -1,34 +1,34 @@
 import { FC } from 'react';
-import { IMAGE_PATH } from '../../constants/api';
+import { IMAGE_PATH } from '../../constants';
 import styles from './CategoryListItem.module.scss';
 import { CategoryListItemProps } from './CategoryListItem.types';
 
 export const CategoryListItem: FC<CategoryListItemProps> = ({
 	pageContent,
-	poster_path,
-	profile_path,
-	vote_average,
-	original_title,
-	original_name,
-	name,
-	release_date,
-	first_air_date,
+	poster_path: poster,
+	profile_path: profile,
+	vote_average: vote,
+	original_title: movieTitle,
+	original_name: TVShowName,
+	name: personName,
+	release_date: movieDate,
+	first_air_date: TVShowDate,
 }) => {
 	const isMovie = pageContent === 'popular-movies';
 	const isTopRatedMovie = pageContent === 'top_rated-movies';
 	const isMovieCard = isMovie || isTopRatedMovie;
 	const isTVShowsCard = pageContent === 'popular-tv_shows';
 	const isPeopleCard = pageContent === 'popular-people';
-	const dateTimeAttr = !isPeopleCard && new Date(release_date ?? first_air_date).toISOString();
-	const date = !isPeopleCard && new Date(release_date ?? first_air_date).toDateString().slice(4);
+	const dateTimeAttr = !isPeopleCard && new Date(movieDate ?? TVShowDate).toISOString();
+	const date = !isPeopleCard && new Date(movieDate ?? TVShowDate).toDateString().slice(4);
 
 	return (
 		<li>
 			<article className={styles['card']}>
-				{!isPeopleCard && <small className={styles['card-budge']}>{`${vote_average}`}</small>}
+				{!isPeopleCard && <small className={styles['card-budge']}>{`${vote}`}</small>}
 				<img
 					className={styles['card-poster']}
-					src={`${IMAGE_PATH}${isMovieCard || isTVShowsCard ? poster_path : profile_path}`}
+					src={`${IMAGE_PATH}${isMovieCard || isTVShowsCard ? poster : profile}`}
 					width="200"
 					height="350"
 					loading="lazy"
@@ -36,7 +36,7 @@ export const CategoryListItem: FC<CategoryListItemProps> = ({
 				/>
 				<a className={styles['card-link']} href="#" aria-label="Go to Movie Details"></a>
 				<div className={styles['card-content']}>
-					<h2 className={styles['card-title']}>{`${isMovieCard ? original_title : isTVShowsCard ? original_name : name}`}</h2>
+					<h2 className={styles['card-title']}>{`${isMovieCard ? movieTitle : isTVShowsCard ? TVShowName : personName}`}</h2>
 					{!isPeopleCard && (
 						<time className={styles['card-date']} dateTime={`${dateTimeAttr}`}>
 							{`${date}`}

@@ -1,6 +1,6 @@
 import { FC } from 'react';
 import { Link } from 'react-router-dom';
-import { MOVIES, PEOPLE, TV_SHOWS } from '../../constants/api';
+import { MOVIES, PEOPLE, TV_SHOWS } from '../../constants';
 import { MenuListItemProps } from '../MenuListItem/MenuListItem.types';
 import styles from './MenuListItem.module.scss';
 

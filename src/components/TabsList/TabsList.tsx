@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import { NOW_PLAYING, TOP_RATED, UPCOMING } from '../../constants/api';
+import { NOW_PLAYING, TOP_RATED, UPCOMING } from '../../constants';
 import { TabsListItem } from '../TabsListItem/TabsListItem';
 import styles from './TabsList.module.scss';
 

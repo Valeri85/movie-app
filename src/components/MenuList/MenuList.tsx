@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import { MOVIES, PEOPLE, TV_SHOWS } from '../../constants/api';
+import { MOVIES, PEOPLE, TV_SHOWS } from '../../constants';
 import { MenuListItem } from '../MenuListItem/MenuListItem';
 import styles from './MenuList.module.scss';
 import { MenuListProps } from './MenuList.types';

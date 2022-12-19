@@ -1,4 +1,4 @@
-import { API_KEY, BASE_URL } from '../constants/api';
+import { API_KEY, BASE_URL } from '../constants';
 import { getDataProps } from './types/getDataProps.types';
 
 export const fetchAPIData = async (url: string) => {

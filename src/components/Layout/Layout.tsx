@@ -1,6 +1,6 @@
 import { FC, useEffect, useRef, useState } from 'react';
 import { Outlet } from 'react-router-dom';
-import { TOP_RATED } from '../../constants/api';
+import { TOP_RATED } from '../../constants';
 import { Footer } from '../Footer/Footer';
 import { Header } from '../Header/Header';
 import { HeaderHeight } from '../Header/Header.types';
