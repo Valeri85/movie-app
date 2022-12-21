@@ -1,4 +1,4 @@
 export interface Person {
-	profile_path?: string;
-	name?: string;
+	profile_path: string;
+	name: string;
 }

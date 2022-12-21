@@ -1,6 +1,5 @@
 import { FC } from 'react';
 import { useNavigate, useOutletContext } from 'react-router-dom';
-import { NOW_PLAYING, TOP_RATED, UPCOMING } from '../../constants';
 import { RouterContext } from '../../pages/Home/Home.types';
 import { TabsListItemProps } from '../TabsListItem/TabsListItem.types';
 import styles from './TabsListItem.module.scss';
@@ -12,9 +11,7 @@ export const TabsListItem: FC<TabsListItemProps> = ({ tab, index }) => {
 	const tabIndex = index + 1;
 
 	const clickHandler = () => {
-		tab === TOP_RATED && navigate(`${TOP_RATED}`);
-		tab === UPCOMING && navigate(`${UPCOMING}`);
-		tab === NOW_PLAYING && navigate(`${NOW_PLAYING}`);
+		navigate(`/${tab}`);
 		setSelectedTab({ id: tabIndex, category: tab });
 	};
 

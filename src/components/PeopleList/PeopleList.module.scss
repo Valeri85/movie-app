@@ -1,0 +1,13 @@
+// TODO | Should be global style
+
+.cards-list {
+	display: none;
+}
+
+.active {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	gap: 1em;
+	margin-top: 2em;
+}

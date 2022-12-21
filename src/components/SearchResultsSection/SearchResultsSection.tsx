@@ -1,9 +1,9 @@
 import { FC } from 'react';
-import { Outlet } from 'react-router-dom';
-import { CategoryList } from '../CategoryList/CategoryList';
+import { MoviesList } from '../MovieList/MoviesList';
 
 export const SearchResultsSection: FC = () => (
+	// TODO | Section must have heading
 	<section>
-		<Outlet />
+		<MoviesList />
 	</section>
 );
