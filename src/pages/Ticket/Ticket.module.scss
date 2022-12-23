@@ -1,0 +1,13 @@
+.ticket {
+	background-color: var(--clr-primary-300);
+	width: 500px;
+	height: 500px;
+	margin: auto;
+	padding: 2em;
+	color: var(--clr-primary-100);
+
+	.text {
+		display: flex;
+		justify-content: space-between;
+	}
+}

@@ -9,7 +9,7 @@ export const PeopleListItem: FC<Person> = ({ name, profile_path }) => (
 			<Card.Body>
 				<Card.Title>{name}</Card.Title>
 			</Card.Body>
-			<Card.Details />
+			<Card.Details href="id" />
 		</Card>
 	</li>
 );

@@ -5,6 +5,8 @@
 
 	/* Font Sizes */
 	--fs-body: clamp(1.6rem, 1.5091rem + 0.2424vw, 1.8rem);
+	--fs-h1: clamp(2.5rem, 2.0714rem + 1.3393vw, 4rem);
+	--fs-h2: clamp(2rem, 1.8571rem + 0.4464vw, 2.5rem);
 
 	/* Font Weights */
 	--fw-normal: 400;
@@ -15,10 +17,10 @@
 	--clr-primary-300: hsl(201, 96%, 20%);
 	--clr-primary-400: hsl(278, 68%, 11%);
 
-	--clr-secondary-200: hsl(60, 100%, 45%);
+	--clr-secondary-200: hsl(39, 100%, 60%);
 
 	/* Hovers */
-	--clr-hover-400: hsl(60, 100%, 75%);
+	--clr-hover-400: hsl(39, 100%, 60%);
 
 	/* Shadows */
 	--shadow: 0 7.5px 7.5px 0 hsl(0 0% 0% / 0.5);
@@ -27,7 +29,10 @@
 	--padding: clamp(1em, 0.7143rem + 0.8929vw, 2em);
 
 	/* Border Radiuses */
-	/* --border-radius-400: 0.6em; */
+	--border-radius-400: 0.5em;
+	--border-radius-500: 50px;
+	--border-radius-600: 2em;
+	--border-radius-700: 10em;
 
 	/* Animations */
 	/* Duration */

@@ -12,7 +12,7 @@ export const TVShowsListItem: FC<TVShow> = ({ first_air_date, original_name, pos
 					<Card.Title>{original_name}</Card.Title>
 					<Card.Time>{first_air_date}</Card.Time>
 				</Card.Body>
-				<Card.Details />
+				<Card.Details href="id" />
 			</Card>
 		</li>
 	);

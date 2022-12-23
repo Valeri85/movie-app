@@ -2,7 +2,7 @@ import { FC } from 'react';
 import { Movie } from '../../service/types/Movie.types';
 import Card from '../Card/Card';
 
-export const MoviesListItem: FC<Movie> = ({ original_title, poster_path, release_date, vote_average }) => (
+export const MoviesListItem: FC<Movie> = ({ id, original_title, poster_path, release_date, vote_average }) => (
 	<li>
 		<Card>
 			<Card.Badge>{vote_average}</Card.Badge>
@@ -11,7 +11,7 @@ export const MoviesListItem: FC<Movie> = ({ original_title, poster_path, release
 				<Card.Title>{original_title}</Card.Title>
 				<Card.Time>{release_date}</Card.Time>
 			</Card.Body>
-			<Card.Details />
+			<Card.Details href={`/movie/${id}`} />
 		</Card>
 	</li>
 );
