@@ -3,7 +3,7 @@ import { useLoaderData } from 'react-router-dom';
 import styles from './Ticket.module.scss';
 
 export const Ticket: FC = () => {
-	const { orderedMovie, movie } = useLoaderData() as any; //Todo
+	const { order, movie } = useLoaderData() as any; //Todo
 
 	return (
 		<section>
@@ -13,13 +13,13 @@ export const Ticket: FC = () => {
 					Movie <span>{movie.original_title}</span>
 				</p>
 				<p className={styles.text}>
-					Seat(s) <span>{orderedMovie.soldSeats.join(', ')}</span>
+					Seat(s) <span>{order.soldSeats.join(', ')}</span>
 				</p>
 				<p className={styles.text}>
-					Order <span>{orderedMovie.movieId}</span>
+					Order <span>{order.movieId}</span>
 				</p>
 				<p className={styles.text}>
-					Tickets <span>{orderedMovie.soldSeats.length}</span>
+					Tickets <span>{order.soldSeats.length}</span>
 				</p>
 			</div>
 		</section>

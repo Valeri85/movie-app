@@ -1,4 +1,4 @@
-import { FC, useId, useState } from 'react';
+import { FC, useState } from 'react';
 import { useLoaderData, useNavigate } from 'react-router-dom';
 import { Button } from '../../components/Button/Button';
 import Card from '../../components/Card/Card';
@@ -8,8 +8,7 @@ import { MovieDetailsType } from './MovieDetails.types';
 export const MovieDetails: FC = () => {
 	const {
 		id: movieId,
-		orderedMovies,
-		orderedId,
+		orders,
 		soldSeats,
 		original_title,
 		overview,
@@ -20,7 +19,7 @@ export const MovieDetails: FC = () => {
 
 	const [selectedSeat, setSelectedSeat] = useState<number[]>([]);
 	const navigate = useNavigate();
-	const orderId = useId();
+	const orderId = crypto.randomUUID();
 
 	const onHandleClick = (newSeat: number) => {
 		const unselectedSeat = selectedSeat.some(seat => seat === newSeat);
@@ -31,10 +30,7 @@ export const MovieDetails: FC = () => {
 	};
 
 	const clickHandler = () => {
-		localStorage.setItem(
-			'tickets',
-			JSON.stringify({ orders: [...orderedMovies, ...orderedId, { orderId, movieId, soldSeats: selectedSeat }] })
-		);
+		localStorage.setItem('tickets', JSON.stringify({ orders: [...orders, { orderId, movieId, soldSeats: selectedSeat }] }));
 		navigate(`/ticket/${movieId}`);
 	};
 

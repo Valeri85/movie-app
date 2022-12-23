@@ -4,10 +4,10 @@ export interface MovieDetailsType extends Movie {
 	orderedId: string;
 	overview: string;
 	soldSeats: number[];
-	orderedMovies: orderedMovie[];
+	orders: order[];
 }
 
-export interface orderedMovie {
+export interface order {
 	orderId: string;
 	movieId: number;
 	soldSeats: number[];

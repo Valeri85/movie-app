@@ -3,10 +3,12 @@ import { App } from './App';
 import { MOVIES, PEOPLE, POPULAR, TOP_RATED, TV_SHOWS } from './constants';
 import { Home } from './pages/Home/Home';
 import { MovieDetails } from './pages/MovieDetails/MovieDetails';
-import { orderedMovie } from './pages/MovieDetails/MovieDetails.types';
+import { order } from './pages/MovieDetails/MovieDetails.types';
 import { Movies } from './pages/Movies/Movies';
 import { People } from './pages/People/People';
+import { PersonDetails } from './pages/PersonDetails/PersonDetails';
 import { Ticket } from './pages/Ticket/Ticket';
+import { TVShowDetails } from './pages/TVShowDetails/TVShowDetails';
 import { TVShows } from './pages/TVShows/TVShows';
 import { getData, getDetails } from './service/api';
 
@@ -21,30 +23,30 @@ export const router = createBrowserRouter(
 				loader={async ({ params }) => {
 					const data = await getDetails('movie', params.id);
 					const tickets = JSON.parse(localStorage.getItem('tickets') ?? '{}');
-					const orderedMovies: orderedMovie[] = tickets.orders?.filter((order: orderedMovie) => order.movieId.toString() === params.id);
-					const orderedId: orderedMovie['orderId'] = tickets.orders?.filter((order: orderedMovie) => order.orderId);
-					const soldSeats: orderedMovie['soldSeats'] = [];
+					const orderes: order[] = tickets.orders?.filter((order: order) => order.movieId.toString() === params.id);
+					const soldSeats: order['soldSeats'] = [];
 
-					orderedMovies?.forEach(orderedMovie => orderedMovie.soldSeats.forEach(soldSeat => soldSeats.push(soldSeat)));
+					orderes?.forEach(order => order.soldSeats.forEach(soldSeat => soldSeats.push(soldSeat)));
 
-					return { ...data, orderedMovies: orderedMovies ?? [], soldSeats, orderedId: orderedId ?? [] };
+					return { ...data, orders: tickets?.orders ?? [], soldSeats };
 				}}
 			/>
+			<Route path="tv/:id" element={<TVShowDetails />} loader={({ params }) => getDetails('tv', params.id)} />
+			<Route path="person/:id" element={<PersonDetails />} loader={({ params }) => getDetails('person', params.id)} />
 			<Route
 				path="ticket/:id"
 				element={<Ticket />}
 				loader={async ({ params }) => {
 					const tickets = JSON.parse(localStorage.getItem('tickets') ?? '{}');
-					const orderedMovie: orderedMovie = tickets.orders?.find((movie: orderedMovie) => movie.movieId.toString() === params.id);
-					console.log(orderedMovie);
-					const movie = await getDetails('movie', orderedMovie.movieId.toString());
+					const order: order = tickets.orders?.find((order: order) => order.movieId.toString() === params.id);
+					const movie = await getDetails('movie', order.movieId.toString());
 					return {
-						orderedMovie,
+						order,
 						movie,
 					};
 				}}
 			/>
-			<Route path={`${MOVIES}`} element={<Movies />} loader={() => getData('movie', POPULAR)}></Route>
+			<Route path={`${MOVIES}`} element={<Movies />} loader={() => getData('movie', POPULAR)} />
 			<Route path={`${TV_SHOWS}`} element={<TVShows />} loader={() => getData('tv', POPULAR)} />
 			<Route path={`${PEOPLE}`} element={<People />} loader={() => getData('person', POPULAR)} />
 		</Route>
